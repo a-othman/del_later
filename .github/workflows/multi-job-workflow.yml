@@ -8,7 +8,7 @@ jobs:
             - name: getting-code
               uses: actions/checkout@v3
             - name: install-dependancies
-              uses: npm ci
+              run: npm ci
     job2:
         needs: job1
         name: linting job
