@@ -14,17 +14,29 @@ jobs:
         name: linting job
         runs-on: ubuntu-latest
         steps:
-          - name: linting
-            run: npm run lint
+            - name: getting-code
+              uses: actions/checkout@v3
+            - name: install-dependancies
+              run: npm ci
+            - name: linting
+              run: npm run lint
     job3:
         name: testing
         runs-on: ubuntu-latest
         steps:
+          - name: getting code
+            uses: actions/checkout@v3
+          - name: install dependancies
+            run: npm ci
           - name: testing code
             run: npm test
     job4:
         name: build
         runs-on: ubuntu-latest
         steps:
+            - name: getting code
+              uses: actions/checkout@v3
+            - name: install dependancies
+              run: npm ci
             - name: deploy-step
               run: npm run build 
