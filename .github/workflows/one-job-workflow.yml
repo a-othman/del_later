@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: linting-step
-              run: npx eslint src/
+              run: npx eslint ../../src/
             
             - name: testing code step
               run: npm test
