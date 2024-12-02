@@ -1,0 +1,28 @@
+name: deployment workflow
+on: push
+jobs:
+    job1:
+        name: check path
+        runs-on: ubuntu-latest
+        steps:
+            - name: check my current location
+              run:
+                pwd && ls
+    job2:
+        name: linting job
+        runs-on: ubuntu-latest
+        steps:
+          - name: linting
+            run: npm run lint
+    job3:
+        name: testing
+        runs-on: ubuntu-latest
+        steps:
+          - name: testing code:
+            run: npm test
+    job 3:
+        name: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: deploy-step
+              run: npm run build 

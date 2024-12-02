@@ -6,9 +6,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: check my current location
-              run: |
-                pwd
-                ls
+              run:
+                pwd && ls
             - name: linting-step
               run: npx eslint ../../src/
             
