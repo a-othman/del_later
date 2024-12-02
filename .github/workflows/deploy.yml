@@ -1,0 +1,15 @@
+name: deployment workflow
+on: push
+jobs:
+    job1:
+        name: linting
+        runs-on: ubuntu-latest
+        steps:
+            - name: linting-step
+              run: eslint --ext .jsx --fix src
+            
+            - name: testing code step
+              run: npm test
+            
+            - name: deploy-step
+              run: npm run build 
