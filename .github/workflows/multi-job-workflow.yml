@@ -1,4 +1,4 @@
-name: deployment workflow
+name: multi-job-deployment-workflow
 on: push
 jobs:
     job1:
