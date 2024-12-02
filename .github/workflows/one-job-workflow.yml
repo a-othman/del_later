@@ -5,6 +5,10 @@ jobs:
         name: lint-test-deploy job
         runs-on: ubuntu-latest
         steps:
+            - name: check my current location
+              run: |
+                pwd
+                ls
             - name: linting-step
               run: npx eslint ../../src/
             
