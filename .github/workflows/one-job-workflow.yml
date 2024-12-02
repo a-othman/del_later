@@ -5,14 +5,15 @@ jobs:
         name: lint-test-deploy job
         runs-on: ubuntu-latest
         steps:
-            - name: check my current location
-              run:
-                pwd && ls
+            - name: getting code
+              uses: actions/checkout@v3
+            - name: installing dependancies
+              run: npm ci
             - name: linting-step
-              run: npx eslint ../../src/
+              run: npm run lint
             
             - name: testing code step
-              run: npm test
+              run: npm run test
             
             - name: deploy-step
               run: npm run build 
