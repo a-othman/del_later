@@ -5,9 +5,10 @@ jobs:
         name: check path
         runs-on: ubuntu-latest
         steps:
-            - name: check my current location
-              run:
-                pwd && ls
+            - name: getting-code
+              uses: actions/checkout@v3
+            - name: install-dependancies
+              uses: npm ci
     job2:
         needs: job1
         name: linting job
